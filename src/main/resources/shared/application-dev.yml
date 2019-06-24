@@ -10,6 +10,12 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto: update
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: meetin
+      
 eureka:
   client:
     service-url:
