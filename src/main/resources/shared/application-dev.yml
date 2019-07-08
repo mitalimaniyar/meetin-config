@@ -3,7 +3,6 @@ spring:
     url: jdbc:mysql://localhost:3306/meetin?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
     username: root
     password: root
-    #initialization-mode: 
   jpa:
     properties:
       hibernate:
@@ -15,16 +14,20 @@ spring:
       host: localhost
       port: 27017
       database: meetin
-      
+  mail:
+    host: smtp.mail.yahoo.com
+    port: 465
+    username: radiologyreport@yahoo.com
+    password: 963852123
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+                
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/
-logging:
-  level:
-    org.hibernate.sql: DEBUG
-    
-app:
-  jwt:
-    secret: MeetIn
-    expiration: 604800000
